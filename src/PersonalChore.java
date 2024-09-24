@@ -7,4 +7,17 @@ import java.util.Date;
  */
 class PersonalChore extends Task implements Postponable {
 
+    public PersonalChore(String taskName, int priority, Date deadLine) {
+        super(taskName, priority, deadLine);
+    }
+
+    @Override
+    public void postpone(int days) {
+        System.out.println("Se pospone " + days + " dias");
+    }
+
+    @Override
+    void pefformTask() {
+        System.out.println("Tarea en ejecución : " + this.taskName);
+    }
 }
