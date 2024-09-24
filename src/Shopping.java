@@ -6,4 +6,12 @@ import java.util.Date;
  */
 class Shopping extends Task {
 
+    public Shopping(String taskName, int priority, Date deadLine) {
+        super(taskName, priority, deadLine);
+    }
+
+    @Override
+    public void pefformTask() {
+        System.out.println("Tarea en ejecución : " + this.taskName);
+    }
 }

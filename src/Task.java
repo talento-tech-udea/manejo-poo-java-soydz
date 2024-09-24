@@ -14,5 +14,19 @@ import java.util.Date;
     - getDetails
  */
 abstract class Task {
+    protected String taskName;
+    private int priority;
+    private Date deadLine;
 
+    public Task(String taskName, int priority, Date deadLine) {
+        this.taskName = taskName;
+        this.priority = priority;
+        this.deadLine = deadLine;
+    }
+
+    abstract void pefformTask();
+
+    public String getDetails() {
+        return "Tarea: " + this.taskName + " con prioridad " + this.priority + " y fecha limite " + this.deadLine;
+    }
 }

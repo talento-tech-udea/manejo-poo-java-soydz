@@ -1,3 +1,5 @@
+
+import java.util.List;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -18,7 +20,20 @@ public class Main {
     public static void main(String[] args) {
         // Crear una lista de tareas
 
-        // Verificar si una clase es instancia de otra
-        // task instanceof Postponable
+        List<Task> tasks = new ArrayList<>();
+
+        tasks.add( new Meeting("Reunion con los socios", 5, new Date(), "Medellin"));
+        tasks.add( new Shopping("Comprar el mercado", 4, new Date()));
+        tasks.add( new PersonalChore("Pasear al perro", 1, new Date()));
+
+        for (Task i:tasks) {
+            i.pefformTask();
+            System.out.println(i.getDetails());
+
+            // Verificar si una clase es instancia de otra
+            if(i instanceof Meeting) {
+              ((Postponable) i).postpone(5);
+            }
+        }
     }
 }
